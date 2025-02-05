@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aapravasi-Ghat-Spatial</title>
+    <link rel="stylesheet" href="loading.css">
+    <script>
+        window.onload = function() {
+            // Fade out the loading screen after 2 seconds
+            setTimeout(function() {
+                document.querySelector('.loading').style.opacity = '0';
+                document.querySelector('.loading').style.transition = 'opacity 1s ease'; // Smooth transition
+            }, 2000); // Fade out after 2 seconds
+
+            // Redirect after 3 seconds
+            setTimeout(function() {
+                window.location.href = 'home.html'; // Redirect to home.html
+            }, 3000); // 3000 milliseconds = 3 seconds
+        };
+    </script>
+</head>
+<body>
+    <div class="loading">
+        <div class="rotating"></div> <!-- Rotating gradient background -->
+        <div class="static-logo"></div> <!-- Static logo -->
+    </div>
+</body>
+</html>

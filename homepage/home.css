@@ -1,0 +1,802 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px 5%;
+    border-bottom: 2px solid #ccc;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.logo {
+    height: 60px;
+    width: auto;
+}
+
+.top-bar-links {
+    display: flex;
+    gap: 40px;
+}
+
+.top-bar-links a {
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.top-bar-links a:hover {
+    color: red;
+    transform: scale(1.1);
+}
+
+.menu-icon {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: black;
+    z-index: 1100; 
+}
+@media (max-width: 768px) {
+    .top-bar {
+        padding: 10px;
+    }
+
+    .logo {
+        height: 50px;
+    }
+
+    .top-bar-links {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        background-color: white;
+        border: 1px solid #ccc;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        z-index: 1000; 
+    }
+
+    .top-bar-links a {
+        display: block;
+        padding: 10px;
+    }
+
+    .menu-icon {
+        display: block; 
+        position: relative;
+    }
+
+    .top-bar-links.active {
+        display: flex;
+    }
+}
+
+.main-image-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; 
+    background-image: url('pictures/homepage.jpg');
+    background-size: cover; 
+    background-position: center center; 
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+}
+
+.main-image-text {
+    position: absolute;
+    top: 50%; 
+    left: 5%; 
+    transform: translateY(-50%); 
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    max-width: 50%; 
+}
+
+.main-image-text h1 {
+    font-size: 5rem;
+    margin: 0;
+    font-weight: bold;
+}
+
+.main-image-text p {
+    font-size: 2.4rem;
+    color: #efbf04;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .main-image-container {
+        height: 60vh;
+    }
+
+    .main-image-text {
+        left: 10px; 
+        max-width: 90%; 
+    }
+
+    .main-image-text h1 {
+        font-size: 2.5rem; 
+    }
+
+    .main-image-text p {
+        font-size: 1.2rem; 
+    }
+}
+
+.middle-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: -50px 0 50px 0;
+    position: relative;
+    z-index: 2;
+    padding: 0 10px;
+}
+
+.middle-square {
+    position: relative;
+    width: 100%;
+    max-width: 865px;
+    height: 368px;
+    border-radius: 0 0 40px 40px;
+    overflow: hidden;
+    box-shadow: 7px 10px 8px rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+    display: flex;
+}
+
+.middle-square img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    z-index: 2;
+}
+
+.text-white {
+    left: 0;
+    align-items: flex-start;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.7); 
+    width: 50%;
+}
+
+.text-white h2 {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    color: #b01038;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    text-decoration: underline;
+}
+
+.text-white p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #000000;
+    font-family: 'Bahnschrift', sans-serif;
+}
+.text-red {
+    right: 0;
+    align-items: flex-start;
+    text-align: left;
+    color: white;
+    width: 50%;
+}
+
+.text-red h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.text-red p {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.text-red a {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: yellow;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.text-red a:hover {
+    color: white;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .text-white {
+        padding: 27px; 
+    }
+
+    .text-white h2 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .text-white p {
+        font-size: 0.8rem;
+        line-height: 1.5; 
+    }
+
+
+    .middle-square {
+        height: 250px; 
+    }
+
+    .text-red h2 {
+        font-size: 1.2rem; 
+    }
+
+    .text-red p {
+        font-size: 1rem; 
+    }
+
+    .text-red a {
+        font-size: 1.2rem; 
+    }
+}
+
+
+
+.divider {
+    width: 100%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5%; 
+}
+
+.divider-image {
+    width: 100%;
+    max-width: 800px; 
+    height: auto; 
+}
+
+@media (max-width: 768px) {
+    .divider {
+        padding: 0 1%; 
+    }
+    .divider-image {
+        max-width: 100%; 
+        width: 100%; 
+    }
+}
+
+@media (max-width: 480px) {
+    .divider {
+        padding: 0 1%;
+    }
+    .divider-image {
+        max-width: 100%; 
+        width: 100%; 
+    }
+}
+
+.meet-spatial-text {
+    width: 100%; 
+    max-width: 800px; 
+    margin: 20px auto; 
+    text-align: left; 
+}
+
+.meet-spatial-text h2 {
+    font-size: 2rem;
+    color: #b01038; 
+    margin: 0;
+}
+
+
+.immersive-experience-text {
+    width: 100%; 
+    max-width: 800px; 
+    margin: 30px auto; 
+    text-align: left; 
+}
+
+.immersive-experience-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+    font-family: 'Bahnschrift', sans-serif; 
+    margin-bottom: 20px; 
+}
+
+@media (max-width: 768px) {
+    .meet-spatial-text {
+        width: 90%; 
+        max-width: 90%; 
+    }
+
+    .meet-spatial-text h2 {
+        font-size: 1.6rem; 
+    }
+
+    .immersive-experience-text {
+        width: 90%; 
+        max-width: 90%; 
+    }
+
+    .immersive-experience-text p {
+        font-size: 1rem; 
+    }
+}
+
+@media (max-width: 480px) {
+    .meet-spatial-text {
+        width: 100%; 
+    }
+
+    .meet-spatial-text h2 {
+        font-size: 1.4rem; 
+    }
+
+    .immersive-experience-text {
+        width: 100%; 
+    }
+
+    .immersive-experience-text p {
+        font-size: 0.9rem; 
+    }
+}
+
+
+.key-features {
+    width: 100%; 
+    max-width: 800px;
+    margin: 55px auto; 
+    text-align: left; 
+}
+
+.key-features h3 {
+    font-size: 1.6rem; 
+    font-family: 'Bahnschrift', sans-serif; 
+    font-weight: normal; 
+    color: #b01038;
+    margin-bottom: 5px; 
+}
+
+.key-features-list ul {
+    list-style-type: disc; 
+    width: 100%; 
+    max-width: 770px; 
+    margin: 0 auto; 
+    text-align: left; 
+    font-family: 'Bahnschrift', sans-serif;
+    font-size: 1rem;
+    color: #333;
+    margin-top: 20px;
+}
+
+.key-features-list li {
+    margin-top: -25px;
+    margin-bottom: 20px; 
+}
+
+
+.key-features-list li::marker {
+    color: #b01038; 
+    font-size: 1.5rem; 
+}
+
+@media (max-width: 768px) {
+    .key-features {
+        width: 90%; 
+        max-width: 90%; 
+    }
+
+    .key-features h3 {
+        font-size: 1.4rem;
+    }
+
+    .key-features-list ul {
+        width: 90%; 
+        font-size: 1rem; 
+    }
+
+    .key-features-list li {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .key-features {
+        width: 100%; 
+    }
+
+    .key-features h3 {
+        font-size: 1.2rem; 
+    }
+
+    .key-features-list ul {
+        width: 100%; 
+        font-size: 0.9rem;
+    }
+
+    .key-features-list li {
+        margin-bottom: 20px; 
+    }
+}
+
+.video-text {
+    width: 800px; 
+    margin: 40px auto;
+    text-align: left; 
+}
+
+.video-text h2 {
+    font-size: 2rem;
+    color: #b01038; 
+    margin: 0;
+}
+
+.Watch-our-text {
+    width: 800px; 
+    margin: 20px auto;
+    text-align: left;
+}
+
+.Watch-our-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+    font-family: 'Bahnschrift', sans-serif; 
+    margin-bottom: 20px; 
+    margin-top: -5px; 
+}
+
+@media (max-width: 768px) {
+    .video-text, .Watch-our-text {
+        width: 90%; 
+        margin: 10px auto; 
+    }
+
+    .video-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .Watch-our-text p {
+        font-size: 1rem; 
+    }
+}
+
+@media (max-width: 480px) {
+    .video-text, .Watch-our-text {
+        width: 100%; 
+        margin: 5px auto; 
+    }
+
+    .video-text h2 {
+        font-size: 1.2rem; 
+    }
+
+    .Watch-our-text p {
+        font-size: 0.9rem; 
+    }
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    margin: 40px auto;
+    max-width: 800px; 
+}
+
+.video-container {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(200, 200, 200, 0.5));
+    border-radius: 10px; 
+    padding: 20px; 
+    display: flex;
+    justify-content: center; 
+}
+
+.video-container video {
+    width: 100%;
+    max-width: 800px; 
+    height: auto; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease-in-out; 
+}
+
+.video-container video:hover {
+    transform: scale(1.05); 
+}
+
+@media (max-width: 768px) {
+    .video-container video {
+        max-width: 100%; 
+    }
+}
+
+@media (max-width: 480px) {
+    .video-container video {
+        max-width: 100%; 
+    }
+}
+
+.divider-image {
+    display: block; 
+    width: 800px; 
+    height: auto;
+    margin: 80px auto;
+}
+
+.how-to-venture-text {
+    width: 800px;
+    margin: 40px auto; 
+    text-align: center;
+}
+
+.how-to-venture-text h2 {
+    font-size: 2rem;
+    color: #b01038; 
+    margin: 0;
+}
+
+.steps-text {
+    width: 800px; 
+    margin: 20px auto; 
+    text-align: center;
+}
+
+.steps-text h3 {
+    font-size: 1.6rem; 
+    font-family: 'Bahnschrift', sans-serif; 
+    font-weight: normal;
+    color: #b01038;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .how-to-venture-text, .steps-text {
+        width: 90%;
+        margin: 20px auto; 
+    }
+
+    .how-to-venture-text h2 {
+        font-size: 1.5rem; 
+    }
+
+    .steps-text h3 {
+        font-size: 1.3rem; 
+    }
+}
+
+@media (max-width: 480px) {
+    .how-to-venture-text, .steps-text {
+        width: 100%; 
+        margin: 10px auto; 
+    }
+
+    .how-to-venture-text h2 {
+        font-size: 1.2rem; 
+    }
+    .steps-text h3 {
+        font-size: 1.1rem; 
+    }
+}
+
+
+.step-text-left, .step-text-left-2, .step-text-left-3 {
+    width: 800px; 
+    margin: 20px auto; 
+    text-align: left; 
+}
+
+.step-text-left p, .step-text-left-2 p, .step-text-left-3 p {
+    font-size: 1.1rem;
+    font-family: 'Bahnschrift', sans-serif; 
+    color: #000000; 
+    margin: 0;
+}
+
+
+.bullet-points {
+    width: 800px; 
+    margin: 20px auto; 
+    text-align: left; 
+    font-family: 'Bahnschrift', sans-serif;
+}
+
+.bullet-points ul {
+    list-style-type: disc; 
+    padding-left: 20px; 
+}
+
+.bullet-points li {
+    font-size: 1rem;
+    color: #000000; 
+    margin: 10px 0; 
+}
+
+.bullet-points a {
+    color: #107db0; 
+    text-decoration: none; 
+}
+
+.bullet-points a:hover {
+    text-decoration: underline; 
+}
+
+
+.bullet-points li::marker {
+    color: #b01038; 
+    font-size: 1.5rem; 
+}
+
+.below-image-container {
+    text-align: center; 
+    margin-top: 40px; 
+    margin-bottom: 40px; 
+}
+
+.below-image {
+    max-width: 100%; 
+    height: auto; 
+}
+
+.qr-and-text {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    gap: 70px; 
+    margin-top: 20px; 
+    width: 100%;
+}
+
+.option-image {
+    width: 150px; 
+    height: auto;
+}
+
+.qr-text ul {
+    list-style-type: disc; 
+    color: #333;
+    font-size: 1rem;
+    font-family: 'Bahnschrift', sans-serif;
+}
+
+.qr-text li {
+    font-size: 1.1rem; 
+    margin-bottom: 10px; 
+}
+
+.qr-text a {
+    display: inline-block;
+    margin-top: 5px; 
+    font-size: 1.1rem; 
+    color: #1e99af;
+}
+
+@media (max-width: 768px) {
+    .step-text-left, .step-text-left-2, .step-text-left-3, .bullet-points {
+        width: 90%; 
+        margin: 10px auto; 
+    }
+
+    .bullet-points li {
+        font-size: 0.9rem; 
+    }
+
+    .qr-and-text {
+        flex-direction: column; 
+        gap: 20px; 
+    }
+
+
+    .option-image {
+        width: 120px; 
+    }
+
+    .qr-text li, .qr-text a {
+        font-size: 1rem; 
+    }
+}
+
+
+@media (max-width: 480px) {
+    .step-text-left, .step-text-left-2, .step-text-left-3 {
+        width: 100%;
+        margin: 5px auto;
+    }
+
+    .bullet-points li {
+        font-size: 0.85rem; 
+    }
+
+    .qr-and-text {
+        gap: 10px; 
+    }
+
+    .option-image {
+        width: 100px; 
+    }
+
+    .qr-text li, .qr-text a {
+        font-size: 0.9rem; 
+    }
+}
+
+
+.social-media-images {
+    display: flex;
+    justify-content: center; 
+    gap: 90px;
+    margin-top: 20px; 
+}
+
+.social-image {
+    width: 80px; 
+    height: auto;
+}
+
+.footer {
+    background-color: #b01038;
+    color: white; 
+    text-align: center; 
+    padding: 20px 0; 
+    width: 100%; 
+    font-family: 'Arial', sans-serif; 
+    font-size: 1rem; 
+    position: relative; 
+    margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+    .social-image {
+        width: 60px; 
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 15px 0; 
+        font-size: 0.9rem; 
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 10px 0;
+        font-size: 0.8rem; 
+    }
+}
+
